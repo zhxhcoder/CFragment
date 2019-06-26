@@ -26,12 +26,7 @@ public class LogUtils {
             Log.e(tag, msg);
     }
 
-    /**
-     * 输出警告信息
-     *
-     * @param tag 错误信息标识
-     * @param msg 错误信息
-     */
+
     public static void w(String tag, String msg) {
         if (tag == null || msg == null) {
             return;
@@ -40,12 +35,7 @@ public class LogUtils {
             Log.w(tag, msg);
     }
 
-    /**
-     * 输出普�?信息
-     *
-     * @param tag 普�?信息
-     * @param msg 异常信息
-     */
+
     public static void i(String tag, String msg) {
         if (tag == null || msg == null) {
             return;
@@ -59,7 +49,7 @@ public class LogUtils {
             return;
         }
         if (Log.INFO <= logMode)
-            Log.i("xCode", msg);
+            Log.i("cfragment", msg);
     }
 
 
@@ -82,7 +72,7 @@ public class LogUtils {
             return;
         }
         if (Log.DEBUG <= logMode)
-            Log.d("xCode", msg);
+            Log.d("cfragment", msg);
     }
 
     public static void e(Object object, String msg) {
@@ -98,7 +88,7 @@ public class LogUtils {
             return;
         }
         if (Log.DEBUG <= logMode)
-            Log.e("xCode", msg);
+            Log.e("cfragment", msg);
     }
 
 }
