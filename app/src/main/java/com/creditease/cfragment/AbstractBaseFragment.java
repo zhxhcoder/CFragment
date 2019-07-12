@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
+/**
+ * 同事写的抽象类
+ */
 public abstract class AbstractBaseFragment extends Fragment {
 
     public abstract int initContentView(); // 初始化Fragment的整个View
