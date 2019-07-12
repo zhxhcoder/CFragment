@@ -3,7 +3,6 @@ package com.creditease.cfragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -29,6 +28,10 @@ public abstract class CFragment extends Fragment {
 
     private boolean currentVisibleState = false;
 
+    private View mRootView; // onCreateView()里返回的view，修饰为protected,所以子类继承该类时，在onCreateView里必须对该变量进行初始化
+
+    public abstract int initContentView(); // 初始化Fragment的整个View
+
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
@@ -45,8 +48,16 @@ public abstract class CFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        if (mRootView == null) {
+            mRootView = inflater.inflate(initContentView(), container, false);
+        }
+        ViewGroup parent = (ViewGroup) mRootView.getParent();
+        if (parent != null) {
+            parent.removeView(mRootView);
+        }
+        isViewCreated = true;
+        return mRootView;
     }
 
     @Override
@@ -233,6 +244,9 @@ public abstract class CFragment extends Fragment {
     public void onFragmentInVisible() {
         LogUtils.i(getClass().getSimpleName() + "  对用户不可见");
     }
+
+
+    // 初始化Fragment的整个View
 
     @Override
     public void onDestroyView() {

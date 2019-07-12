@@ -2,11 +2,8 @@ package com.creditease.cfragment;
 
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-public class BlankFragment extends CFragment {
+public class BlankFragment extends AbstractBaseFragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -36,9 +33,15 @@ public class BlankFragment extends CFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+    public int initContentView() {
+        return R.layout.fragment_blank;
     }
+
+
+    @Override
+    public void onFirstVisible() {
+
+    }
+
 
 }

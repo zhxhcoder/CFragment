@@ -137,6 +137,8 @@ public abstract class AbstractBaseFragment extends Fragment {
     public void onFragmentVisible() {
         if (mIsFirstVisible) {
             mIsFirstVisible = false;
+
+            LogUtils.i(getClass().getSimpleName() + "  onFirstVisible");
             onFirstVisible();
         } else {
             onEveryVisible();
@@ -150,7 +152,7 @@ public abstract class AbstractBaseFragment extends Fragment {
      * @time 2018/5/30
      */
     public void onEveryVisible() {
-
+        LogUtils.i(getClass().getSimpleName() + "  onEveryVisible");
     }
 
     /**
@@ -160,7 +162,7 @@ public abstract class AbstractBaseFragment extends Fragment {
      * @time 2018/5/30
      */
     public void onFragmentInVisible() {
-
+        LogUtils.i(getClass().getSimpleName() + "  onFragmentInVisible");
     }
 
     /**
