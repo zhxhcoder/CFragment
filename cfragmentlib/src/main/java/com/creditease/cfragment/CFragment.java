@@ -57,6 +57,7 @@ public abstract class CFragment extends Fragment {
             parent.removeView(mRootView);
         }
         isViewCreated = true;
+        initView(mRootView);
         return mRootView;
     }
 
@@ -219,6 +220,10 @@ public abstract class CFragment extends Fragment {
      */
     public boolean hasFirstVisible() {
         return !mIsFirstVisible;
+    }
+
+    public void initView(View root) {
+
     }
 
     public void onFirstVisible() {
