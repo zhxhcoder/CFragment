@@ -3,6 +3,7 @@ package com.creditease.cfragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -57,8 +58,13 @@ public abstract class CFragment extends Fragment {
             parent.removeView(mRootView);
         }
         isViewCreated = true;
-        initView(mRootView);
         return mRootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initView(mRootView);
     }
 
     @Override
@@ -223,6 +229,10 @@ public abstract class CFragment extends Fragment {
     }
 
     public void initView(View root) {
+
+    }
+
+    public void initParams(){
 
     }
 
