@@ -3,7 +3,7 @@ package com.creditease.cfragment;
 
 import android.os.Bundle;
 
-public class BlankFragment extends AbstractBaseFragment {
+public class BlankFragment extends CFragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
