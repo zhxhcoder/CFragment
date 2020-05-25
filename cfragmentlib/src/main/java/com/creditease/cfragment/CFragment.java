@@ -64,6 +64,10 @@ public abstract class CFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //获取参数
+        if (getArguments() != null) {
+            initParams(getArguments());
+        }
         initView(mRootView);
     }
 
@@ -232,7 +236,7 @@ public abstract class CFragment extends Fragment {
 
     }
 
-    public void initParams(){
+    public void initParams(Bundle bundle) {
 
     }
 
@@ -268,5 +272,9 @@ public abstract class CFragment extends Fragment {
         super.onDestroyView();
         isViewCreated = false;
         mIsFirstVisible = true;
+    }
+
+    public <T extends View> T findView(View view, int id) {
+        return (T) view.findViewById(id);
     }
 }
