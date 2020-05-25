@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * Created by zhxh on 2019/06/20
- * 支持嵌套
+ * 支持嵌套,支持viewpager
  * onFirstVisible
  * onEveryVisible
  * onFragmentInVisible
