@@ -50,6 +50,10 @@ public abstract class CFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //获取参数
+        if (getArguments() != null) {
+            initParams(getArguments());
+        }
         if (mRootView == null) {
             mRootView = inflater.inflate(initContentView(), container, false);
         }
@@ -64,10 +68,6 @@ public abstract class CFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //获取参数
-        if (getArguments() != null) {
-            initParams(getArguments());
-        }
         initView(mRootView);
     }
 
