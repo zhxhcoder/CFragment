@@ -236,7 +236,7 @@ public abstract class CFragment extends Fragment {
 
     }
 
-    public void initParams(Bundle bundle) {
+    public void initParams(Bundle arguments) {
 
     }
 

@@ -9,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 4
-        versionName "1.4"
+        versionCode 5
+        versionName "1.5"
     }
     lintOptions {
         abortOnError false
@@ -43,7 +43,7 @@ def gitUrl = 'https://github.com/zhxhcoder/CFragment.git'   //github仓库的地
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-version = "1.4"//version
+version = "1.5"//version
 group = "com.creditease"//groupId
 bintray {
     user = properties.getProperty("bintray.user")
@@ -58,10 +58,10 @@ bintray {
         publish = true // 是否是公开项目。
 
         version {
-            name = '1.4'//版本号
+            name = '1.5'//版本号
             desc = 'fragment with simple liferecycle callback'//版本描述
             released = new Date()
-            vcsTag = 'v1.4'
+            vcsTag = 'v1.5'
             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
         }
     }
